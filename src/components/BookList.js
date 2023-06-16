@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import BookContext from "../context/BookContext";
 import BookDetails from "./BookDetails";
 import BookItem from './BookItem';
+import InsertBook from "./InsertBook";
 
 function BookList() {
   const { initialBooks } = useContext(BookContext);
@@ -9,17 +10,21 @@ function BookList() {
   return (
     <div>
       <h1>Meus Livros</h1>
+      <InsertBook />
       <ul className="flex">
         {initialBooks
           .filter((book) => book.volumeInfo && book.volumeInfo.imageLinks)
           .map((book) => (
-            <>
-              <BookItem key={book.id}
+            <li key={book.id}>
+              <BookItem
+                id={book.id}
+                key={book.id}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
               />
               <BookDetails
+                key={book.volumeInfo.title}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
@@ -27,8 +32,7 @@ function BookList() {
                 pages={book.volumeInfo.pageCount}
                 publisher={book.volumeInfo.publisher}
               />
-
-            </>
+            </li>
           ))}
       </ul>
     </div>

@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import BookContext from './BookContext';
 
 function BookProvider({ children }) {
-  const [loading, setLoading] = useState(true);
   const [initialBooks, setInitialBooks] = useState([]);
+  const [bookName, setBookName] = useState('');
+  const [authorName, setAuthorName] = useState('');
+  const [bookImage, setBookImage] = useState('');
 
   const fetchBookApi = async () => {
       const result = await searchBooks();
       setInitialBooks(result);
-      setLoading(false);
   }
 
   useEffect(() => {
@@ -20,8 +21,12 @@ function BookProvider({ children }) {
   const info = {
     initialBooks,
     setInitialBooks,
-    loading,
-    setLoading,
+    bookName,
+    setBookName,
+    bookImage,
+    setBookImage,
+    authorName,
+    setAuthorName,
   };
 
   return (

@@ -39,4 +39,10 @@
 
 .flex {
   display: flex;
+  width: 90vw;
+  flex-wrap: wrap;
+}
+
+li {
+  width: 50%;
 }
