@@ -6,10 +6,7 @@ function BookDetails({ id, thumbnail, title, author }) {
   const { initialBooks, setInitialBooks } = useContext(BookContext);
 
   const removeBook = () => {
-    const filteredBooks = initialBooks.filter((book) => {
-      return book.id !== id;
-    });
-    console.log(filteredBooks, 'x');
+    const filteredBooks = initialBooks.filter((book) => book.id !== id);
     setInitialBooks(filteredBooks);
   }
 

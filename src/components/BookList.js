@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import BookContext from "../context/BookContext";
 import BookDetails from "./BookDetails";
 import BookItem from './BookItem';
@@ -8,29 +8,25 @@ function BookList() {
   const { initialBooks } = useContext(BookContext);
 
   return (
-    <div>
-      <h1>Meus Livros</h1>
+    <div className="container h-screen w-screen flex items-center flex-col justify-around mx-auto">
+      <h1 className="font-semibold text-3xl text-center text-red-900 font-serif">Meus Livros</h1>
       <InsertBook />
-      <ul className="flex">
+      <ul className="container overflow-auto h-4/5 w-4/5 flex flex-wrap items-center justify-between">
         {initialBooks
           .filter((book) => book.volumeInfo && book.volumeInfo.imageLinks)
           .map((book) => (
-            <li key={book.id}>
+            <li key={book.id} className="w-1/5">
               <BookItem
                 id={book.id}
-                key={book.id}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
               />
               <BookDetails
-                key={book.volumeInfo.title}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
                 title={book.volumeInfo.title}
                 author={book.volumeInfo.authors}
                 description={book.volumeInfo.description}
-                pages={book.volumeInfo.pageCount}
-                publisher={book.volumeInfo.publisher}
               />
             </li>
           ))}
