@@ -11,7 +11,9 @@ function BookDetails({ id, thumbnail, title, author }) {
   }
 
   return (
-    <div>
+    <div
+    // className="flex justify-center flex-col"
+    >
       <img src={thumbnail} alt={title} />
       <h2>{title}</h2>
       <p>{author}</p>

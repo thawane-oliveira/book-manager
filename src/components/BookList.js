@@ -11,11 +11,11 @@ function BookList() {
     <div className="container h-screen w-screen flex items-center flex-col justify-around mx-auto">
       <h1 className="font-semibold text-3xl text-center text-red-900 font-serif">Meus Livros</h1>
       <InsertBook />
-      <ul className="container overflow-auto h-4/5 w-4/5 flex flex-wrap items-center justify-between">
+      <ul className="container overflow-auto h-4/5 w-full flex flex-wrap items-center justify-around">
         {initialBooks
           .filter((book) => book.volumeInfo && book.volumeInfo.imageLinks)
           .map((book) => (
-            <li key={book.id} className="w-1/5">
+            <li key={book.id} className="w-full xs:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
               <BookItem
                 id={book.id}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
