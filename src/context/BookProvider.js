@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { searchBooks } from '../helpers/BookFetch';
+import searchBooks from '../helpers/BookFetch';
 import PropTypes from 'prop-types';
 import BookContext from './BookContext';
 

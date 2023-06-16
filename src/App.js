@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useContext } from 'react';
+// import BookContext from './context/BookContext';
+import BookProvider from './context/BookProvider';
 
 function App() {
+  // const { initialBooks } = useContext(BookContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BookProvider>
+      <h1>Book Manager</h1>
+      {/* {initialBooks.map((book) => <p>{book.volumeInfo.title}</p>)} */}
+    </BookProvider>
+
   );
 }
 
