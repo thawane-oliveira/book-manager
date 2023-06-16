@@ -1,14 +1,15 @@
-// import { useContext } from 'react';
-// import BookContext from './context/BookContext';
 import BookProvider from './context/BookProvider';
+import BookList from './components/BookList';
+import BookDetails from './components/BookDetails';
 
 function App() {
-  // const { initialBooks } = useContext(BookContext);
 
   return (
     <BookProvider>
-      <h1>Book Manager</h1>
-      {/* {initialBooks.map((book) => <p>{book.volumeInfo.title}</p>)} */}
+      <main>
+      <BookList />
+      <BookDetails />
+      </main>
     </BookProvider>
 
   );

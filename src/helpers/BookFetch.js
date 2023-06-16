@@ -1,9 +1,14 @@
 const searchBooks = async () => {
-  const url = 'https://www.googleapis.com/books/v1/volumes?q=colecao+vagalume';
+  try {
+    const url = 'https://www.googleapis.com/books/v1/volumes?q=fantasia';
+    const response = await fetch(url);
 
-  const response = await fetch(url);
-  const data = await response.json();
-  return data.items;
+    const data = await response.json();
+    return data.items;
+  } catch (error) {
+    console.error('Erro ao buscar seus livros:', error);
+    return [];
+  }
 };
 
 export default searchBooks;
