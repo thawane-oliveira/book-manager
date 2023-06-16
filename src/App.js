@@ -1,6 +1,6 @@
 import BookProvider from './context/BookProvider';
 import BookList from './components/BookList';
-import BookDetails from './components/BookDetails';
+import './App.css';
 
 function App() {
 
@@ -8,7 +8,6 @@ function App() {
     <BookProvider>
       <main>
       <BookList />
-      <BookDetails />
       </main>
     </BookProvider>
 
