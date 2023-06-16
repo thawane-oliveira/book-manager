@@ -1,15 +1,10 @@
 import React, { useContext } from "react";
 import BookContext from "../context/BookContext";
 import BookDetails from "./BookDetails";
-
+import BookItem from './BookItem';
 
 function BookList() {
   const { initialBooks } = useContext(BookContext);
-  // const [showDetail, setShowDetail] = useState(false);
-
-  // const seeBookDetails = () => {
-  //   setShowDetail(!showDetail);
-  // };
 
   return (
     <div>
@@ -18,13 +13,22 @@ function BookList() {
         {initialBooks
           .filter((book) => book.volumeInfo && book.volumeInfo.imageLinks)
           .map((book) => (
-            <li key={book.id}>
-              <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.volumeInfo.title} />
-              <h2>{book.volumeInfo.title}</h2>
-              <p>{book.volumeInfo.authors}</p>
-              
-              <BookDetails description={book.volumeInfo.description} />
-            </li>
+            <>
+              <BookItem key={book.id}
+                thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+              />
+              <BookDetails
+                thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                title={book.volumeInfo.title}
+                author={book.volumeInfo.authors}
+                description={book.volumeInfo.description}
+                pages={book.volumeInfo.pageCount}
+                publisher={book.volumeInfo.publisher}
+              />
+
+            </>
           ))}
       </ul>
     </div>

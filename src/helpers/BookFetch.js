@@ -1,6 +1,6 @@
 const searchBooks = async () => {
   try {
-    const url = 'https://www.googleapis.com/books/v1/volumes?q=fantasia';
+    const url = 'https://www.googleapis.com/books/v1/volumes?q=tecnologia';
     const response = await fetch(url);
 
     const data = await response.json();
