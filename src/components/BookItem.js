@@ -11,13 +11,17 @@ function BookDetails({ id, thumbnail, title, author }) {
   }
 
   return (
-    <div
-    // className="flex justify-center flex-col"
-    >
-      <img src={thumbnail} alt={title} />
-      <h2>{title}</h2>
-      <p>{author}</p>
-      <button type="button" onClick={removeBook}>Remover da minha lista</button>
+    <div className="flex justify-around items-center flex-col h-[400px]">
+      <img src={thumbnail} alt={title} className="max-w-4/5 mx-auto" />
+      <h2 className="text-center font-extrabold text-red-900 font-serif text-md">{title}</h2>
+      <p className="text-center font-semibold font-serif text-md">{author}</p>
+      <button
+        className="text-center font-semibold font-serif text-md rounded-md w-1/2"
+        type="button"
+        onClick={removeBook}
+      >
+        Remover da minha lista
+      </button>
     </div>
   );
 }
