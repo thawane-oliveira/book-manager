@@ -6,3 +6,12 @@
 body {
   @apply bg-amber-50
 }
+
+label {
+  @apply font-semibold text-lg text-center text-red-900 font-serif
+}
+
+input {
+  @apply font-medium text-lg text-center font-serif border-amber-100 border-solid
+  border-2 shadow-neutral-200 shadow-md rounded-md w-1/2
+}

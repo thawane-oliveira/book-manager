@@ -8,7 +8,7 @@ function BookDetails({ description, thumbnail, title, author }) {
   };
 
   return (
-    <div>
+    <div className="flex justify-center">
       <div hidden={showDetail}>
         <h1>Detalhes do livro</h1>
         <img src={thumbnail} alt={title} />
@@ -19,8 +19,9 @@ function BookDetails({ description, thumbnail, title, author }) {
       <button
         onClick={seeBookDetails}
         type="button"
+        className="text-center font-semibold font-serif text-md rounded-md bg-green-200 w-1/2 shadow-neutral-200 shadow-md"
       >
-        {showDetail ? 'Ver mais detalhes' : 'Esconder detalhes'}
+        {showDetail ? 'Detalhes' : 'Esconder detalhes'}
       </button>
     </div>
   );

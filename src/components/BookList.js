@@ -20,7 +20,7 @@ function BookList() {
                 id={book.id}
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
                 title={book.volumeInfo.title}
-                author={book.volumeInfo.authors}
+                authors={book.volumeInfo.authors}
               />
               <BookDetails
                 thumbnail={book.volumeInfo.imageLinks.thumbnail}
