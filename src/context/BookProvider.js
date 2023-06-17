@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import BookContext from './BookContext';
 
 function BookProvider({ children }) {
+  const [loading, setLoading] = useState(true);
   const [initialBooks, setInitialBooks] = useState([]);
   const [bookName, setBookName] = useState('');
   const [authorName, setAuthorName] = useState('');
   const [bookImage, setBookImage] = useState('');
+  const [placeholderImg, setPlaceholderImg] = useState('https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png');
 
   const fetchBookApi = async () => {
       const result = await searchBooks();
       setInitialBooks(result);
+      setLoading(false);
   }
 
   useEffect(() => {
@@ -27,6 +30,10 @@ function BookProvider({ children }) {
     setBookImage,
     authorName,
     setAuthorName,
+    loading,
+    setLoading,
+    placeholderImg, 
+    setPlaceholderImg,
   };
 
   return (
