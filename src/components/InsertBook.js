@@ -43,7 +43,7 @@ function InsertBook() {
       <label
         htmlFor="bookName"
       >
-        Digite o nome do livro
+       Digite o nome do livro * 
       </label>
       <input
         id="bookName"
@@ -57,7 +57,7 @@ function InsertBook() {
       <label
         htmlFor="authorName"
       >
-        Digite o nome do autor
+       Digite o nome do autor * 
       </label>
       <input
         id="authorName"

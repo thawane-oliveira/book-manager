@@ -13,6 +13,7 @@ function BookProvider({ children }) {
 
   const fetchBookApi = async () => {
       const result = await searchBooks();
+      
       setInitialBooks(result);
       setLoading(false);
   }

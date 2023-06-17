@@ -3,13 +3,14 @@ import BookContext from "../context/BookContext";
 import BookDetails from "./BookDetails";
 import BookItem from './BookItem';
 import InsertBook from "./InsertBook";
+import Loading from "./Loading";
 
 function BookList() {
   const { initialBooks, loading } = useContext(BookContext);
 
   return (
     <>
-      {loading ? <h1>Carregando...</h1> : (
+      {loading ? <Loading /> : (
         <div className="container min-h-screen w-screen flex items-center flex-col justify-around mx-auto">
           <h1 className="font-semibold text-3xl text-center text-red-900 font-serif">Meus Livros</h1>
           <InsertBook />
