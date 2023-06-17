@@ -67,7 +67,7 @@ function InsertBook() {
       <button
         onClick={setBookInfo}
         type="button"
-        className="text-center font-semibold font-serif text-md rounded-md bg-amber-100 w-2/12"
+        className="w-4/12 text-center font-semibold font-serif text-md rounded-md bg-amber-100 sm:w-3/12"
       >
         Enviar dados
       </button>
