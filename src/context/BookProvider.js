@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import searchBooks from '../helpers/BookFetch';
 import PropTypes from 'prop-types';
 import BookContext from './BookContext';
@@ -24,7 +24,7 @@ function BookProvider({ children }) {
     fetchBookApi();
   }, []);
 
-  const info = {
+  const info = useMemo(() => ({
     initialBooks,
     setInitialBooks,
     loading,
@@ -33,7 +33,7 @@ function BookProvider({ children }) {
     setPlaceholderImg,
     fail,
     setFail
-  };
+  }), [initialBooks, setInitialBooks, loading, setLoading, placeholderImg, setPlaceholderImg, fail, setFail]);
 
   return (
     <BookContext.Provider value={info}>

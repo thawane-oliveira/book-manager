@@ -18,7 +18,7 @@ function BookList() {
           <InsertBook />
           <ul className="container w-full flex flex-wrap items-center justify-around mt-[4%]">
             {initialBooks
-              .filter((book) => book.volumeInfo && book.volumeInfo.imageLinks)
+              .filter((book) => book.volumeInfo?.imageLinks)
               .map(({ id, volumeInfo }) => (
                 <li key={id} className="w-full xs:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-[3%]">
                   <BookItem
