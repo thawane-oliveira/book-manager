@@ -1,17 +1,12 @@
-import { useContext, useState } from "react";
-import BookContext from "../context/BookContext";
+import { useState } from "react";
 
 function BookDetails({ id, thumbnail, title, authors, description = 'Nenhuma descrição inserida' }) {
-  const { placeholderImg } = useContext(BookContext);
   const [showDetail, setShowDetail] = useState(true);
 
   const seeBookDetails = () => {
     setShowDetail(!showDetail);
   };
-
-  const onImageError = ({ target }) => {
-    target.src = placeholderImg;
-  }
+  
   return (
     <div className="flex justify-center items-center w-full h-full">
       {!showDetail &&
@@ -29,7 +24,6 @@ function BookDetails({ id, thumbnail, title, authors, description = 'Nenhuma des
             <img
               className="shadow-lg shadow-black"
               src={thumbnail}
-              onError={onImageError}
               alt={title}
             />
             <h2 className="text-center font-extrabold text-red-900 font-serif text-lg">

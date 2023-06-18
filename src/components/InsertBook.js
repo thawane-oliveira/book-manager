@@ -8,6 +8,7 @@ function InsertBook() {
   const [input, setInput] = useState({ bookName: '', authorName: '', bookImage: '' });
 
   const setBookInfo = (e) => {
+    e.preventDefault();
     const { bookName, authorName, bookImage } = input;
     if (!bookName.length || !authorName.length) {
       setError(true);
