@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import App from '../App';
 import { booksMock } from './mocks/Books.mock';
 import userEvent from '@testing-library/user-event';
@@ -16,7 +16,6 @@ describe('Testes dos componentes da aplicação', () => {
   it('Verifica se após uma falha na requisição à API, é possível visualizar a mensagem de erro pelo componente FailedFetch', async () => {
 
     jest.spyOn(global, 'fetch');
-    // global.fetch.mockResolvedValue({ json: jest.fn().mockResolvedValue(booksMock) });
     global.fetch.mockRejectedValue('TypeError: Failed to fetch');
     render(<App />);
 
@@ -136,7 +135,6 @@ describe('Testes dos componentes da aplicação', () => {
 
     const authorInput = await screen.findByPlaceholderText('Edy Lima');
     expect(authorInput.value).toBe('');
-    // userEvent.change(authorInput, { target: { value: 'Hirohiko Araki' } });
     await user.type(authorInput, 'Hirohiko Araki');
     expect(authorInput.value).toBe('Hirohiko Araki')
 
