@@ -12,6 +12,7 @@ A aplicação foi construída utilizando ReactJS, Context API para gerenciamento
 - Cada livro exibido possui dois botões:
   - Remover: exclui o livro da lista.
   - Ver detalhes: exibe uma sinopse do livro em um modal.
+<img src="https://github.com/thawane-oliveira/book-manager/blob/main/src/images/book-list.gif" width="50%" alt="Funcionamento da aplicação">
 
 ## Como executar o projeto
 
