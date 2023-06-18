@@ -14,8 +14,6 @@ function InsertBook() {
       setError(true);
     }
     else {
-      e.preventDefault();
-
       const newBook = {
         id: Math.random(),
         volumeInfo: {
@@ -90,7 +88,7 @@ function InsertBook() {
         Enviar dados
       </button>
       {error &&
-        <p>Parece que alguns dados não estão completos. Tente novamente.</p>}
+        <p className="text-center font-semibold font-serif text-md">Parece que alguns dados não estão completos. Tente novamente.</p>}
     </form>
   );
 }

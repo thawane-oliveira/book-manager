@@ -6,16 +6,19 @@ import BookContext from './BookContext';
 function BookProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [initialBooks, setInitialBooks] = useState([]);
-  const [bookName, setBookName] = useState('');
-  const [authorName, setAuthorName] = useState('');
-  const [bookImage, setBookImage] = useState('');
+  const [fail, setFail] = useState(false);
   const [placeholderImg, setPlaceholderImg] = useState('https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png');
 
   const fetchBookApi = async () => {
+    try {
       const result = await searchBooks();
-      
       setInitialBooks(result);
       setLoading(false);
+    } catch (error) {
+      console.error('Erro ao buscar seus livros:', error);
+      setLoading(false);
+      setFail(true);
+    }
   }
 
   useEffect(() => {
@@ -25,20 +28,16 @@ function BookProvider({ children }) {
   const info = {
     initialBooks,
     setInitialBooks,
-    bookName,
-    setBookName,
-    bookImage,
-    setBookImage,
-    authorName,
-    setAuthorName,
     loading,
     setLoading,
-    placeholderImg, 
+    placeholderImg,
     setPlaceholderImg,
+    fail,
+    setFail
   };
 
   return (
-    <BookContext.Provider value={ info }>
+    <BookContext.Provider value={info}>
       {children}
     </BookContext.Provider>
   );
