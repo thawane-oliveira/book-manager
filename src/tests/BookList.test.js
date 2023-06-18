@@ -13,6 +13,27 @@ describe('Testes dos componentes da aplicação', () => {
     expect(loading).toBeVisible();
   });
 
+  it('Verifica se após uma falha na requisição à API, é possível visualizar a mensagem de erro pelo componente FailedFetch', async () => {
+
+    jest.spyOn(global, 'fetch');
+    // global.fetch.mockResolvedValue({ json: jest.fn().mockResolvedValue(booksMock) });
+    global.fetch.mockRejectedValue('TypeError: Failed to fetch');
+    render(<App />);
+
+
+    const loading = screen.getByRole('heading', { name: /carregando.../i, level: 1 });
+    expect(loading).toBeVisible();
+    await waitForElementToBeRemoved(loading);
+
+    const h2Text = 'Parece que algo deu errado. Por favor, recarregue a página e tente novamente.';
+    const firstBookName = await screen.findByRole('heading', { name: h2Text, level: 2 });
+    expect(firstBookName).toBeVisible();
+
+    const altErrorImageText = 'Círculo vermelho simbolizando que algo deu errado';
+    const errorImage = await screen.findByAltText(altErrorImageText);
+    expect(errorImage).toBeVisible();
+  });
+
   it('Verifica se após a requisição à API, é possível visualizar livros renderizados pelo componente BookItem', async () => {
 
     jest.spyOn(global, 'fetch');

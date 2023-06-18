@@ -15,9 +15,9 @@ function BookProvider({ children }) {
       setInitialBooks(result);
       setLoading(false);
     } catch (error) {
-      console.error('Erro ao buscar seus livros:', error);
+      // console.error('Erro ao buscar seus livros:', error);
+      setFail(Boolean(error));
       setLoading(false);
-      setFail(true);
     }
   }
 
