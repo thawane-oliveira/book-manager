@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/book-manager/static/css/main.80fc7f5a.css",
+    "main.js": "/book-manager/static/js/main.8a59427f.js",
+    "static/js/787.383be5a3.chunk.js": "/book-manager/static/js/787.383be5a3.chunk.js",
+    "static/media/loading.gif": "/book-manager/static/media/loading.3194745210938580ed15.gif",
+    "static/media/error.png": "/book-manager/static/media/error.e3e9076a557ab20b0975.png",
+    "index.html": "/book-manager/index.html",
+    "main.80fc7f5a.css.map": "/book-manager/static/css/main.80fc7f5a.css.map",
+    "main.8a59427f.js.map": "/book-manager/static/js/main.8a59427f.js.map",
+    "787.383be5a3.chunk.js.map": "/book-manager/static/js/787.383be5a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80fc7f5a.css",
+    "static/js/main.8a59427f.js"
+  ]
+}
