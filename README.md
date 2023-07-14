@@ -1,7 +1,5 @@
 # Book Manager
 
-Este é um projeto desenvolvido como parte do teste técnico para a vaga de Desenvolvedor React JR na empresa Genesis Bank.
-
 A aplicação foi construída utilizando ReactJS, Context API para gerenciamento de estado, TailwindCSS para estilização e RTL para cobertura de testes.
 
 ## Funcionalidades
